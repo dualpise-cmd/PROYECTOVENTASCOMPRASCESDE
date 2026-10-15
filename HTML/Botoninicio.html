@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ctrl+z</title>
+    <link rel="stylesheet" href="/PROYECTOVENTASCOMPRASCESDE/CSS/Style_botoninicio.css">
+</head>
+<body>
+    <section class="box">
+        <img src="/PROYECTOVENTASCOMPRASCESDE/IMAGENES/inicio2.png" alt="Marca de agua">
+        
+    </section>
+    <main class="login-caja">
+        <h1>GESTIÓN DE VENTA Y COMPRA</h1>
+        <p class="subtitulo">Inicia sesión para continuar</p>
+
+        <p id="mensaje-error" class="error" hidden>Usuario o contraseña incorrectos.</p>
+
+        <form action="login" method="post">
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" name="usuario"
+                   placeholder="Escribe tu usuario" required autofocus>
+
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" name="contrasena"
+                   placeholder="Escribe tu contraseña" required>
+
+            <button type="submit" class="btn-ingresar">Ingresar</button>
+        </form>
+
+        <a class="enlace-recuperar" href="recuperar.html">¿Olvidaste tu contraseña?</a>
+    </main>
+
+</body>
+</html>
