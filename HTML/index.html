@@ -18,8 +18,8 @@
             <button class="boton-salir" onclick="cerrarSesion()">Cerrar sesión</button>
         </section>
     </section>
-    <main class="pagina-principal">
 
+    <main class="pagina-principal">
         <section class="tarjetas-datos">
             <section class="tarjeta-dato">
                 <section class="contenido-tarjeta">
@@ -48,9 +48,9 @@
                     <h4> DATOS MAESTROS</h4>
                 </section>
                 <section class="modulo-contenido">
-                    <button class="boton-accion" type="button">CREAR TERCERO</button>
-                    <button class="boton-accion" type="button">CREAR PRODUCTO</button>
-                    <button class="boton-accion" type="button">INFORMES DE CONTROL</button>
+                    <a href="#modal-tercero" class="boton-accion">CREAR TERCERO</a>
+                    <a href="#modal-producto" class="boton-accion" type="button">CREAR PRODUCTO</a>
+                    <a href="#modal-informesmaestros" class="boton-accion" type="button">INFORMES DE CONTROL</a>
                 </section>
             </section>
             <section class="tarjeta-modulo">
@@ -74,9 +74,82 @@
                 </section>
             </section>
         </section>
-
     </main>
+    <section id="modal-tercero" class="fondo-modal">
+        <section class="contenido-modal">
+            <section class="encabezado-modal">
+                <h2>CREAR TERCERO</h2>
+            </section>
+            <form class="formulario-modal" action="#" method="POST">
+                <label class="etiqueta" for="cedula">Cédula:</label>
+                <input class="campo" type="number" id="cedula" name="cedula" required>
+                <label class="etiqueta" for="nombre">Nombre:</label>
+                <input class="campo" type="text" id="nombre" name="nombre" required>
+                <label class="etiqueta" for="apellido">Apellido:</label>
+                <input class="campo" type="text" id="apellido" name="apellido" required>
+                <label class="etiqueta" for="correo">Correo:</label>
+                <input class="campo" type="email" id="correo" name="correo">
+                <label class="etiqueta" for="telefono">Teléfono:</label>
+                <input class="campo" type="tel" id="telefono" name="telefono">
+                <label class="etiqueta" for="direccion">Dirección:</label>
+                <input class="campo" type="text" id="direccion" name="direccion">
+                <label class="etiqueta" for="tipo">Tipo:</label>
+                <checkbox>
+                    <input type="checkbox" id="tipo" name="tipo" value="1">
+                    <label for="tipo">Cliente</label>
+                </checkbox>
+                <checkbox>
+                    <input type="checkbox" id="tipo" name="tipo" value="1">
+                    <label for="tipo">Proveedor</label>
+                </checkbox>
 
+                <button class="boton-accion" type="button">GUARDAR TERCERO</button>
+                <a href="#" class="boton-accion">SALIR</a>
+            </form>
+        </section>
+    </section>
+    <section id="modal-producto" class="fondo-modal">
+        <section class="contenido-modal">
+            <section class="encabezado-modal">
+                <h2>CREAR PRODUCTO</h2>
+            </section>
+            <form class="formulario-modal" action="#" method="POST">
+                <label class="etiqueta" for="codigo">Código</label>
+                <input class="campo" type="text" id="codigo" name="codigo" required>
+                <label class="etiqueta" for="nombre">Nombre producto</label>
+                <input class="campo" type="text" id="nombre" name="nombre" required>
+                <label class="etiqueta" for="precio">Precio venta</label>
+                <input class="campo" type="number" id="precio" name="precio" required>
+                <label class="etiqueta" for="iva">IVA</label>
+                <select id="iva" name="iva">
+                    <option value="">Seleccione una tarifa de IVA</option>
+                    <option value="0">0%</option>
+                    <option value="5">5%</option>
+                    <option value="19">19%</option>
+                </select>
+                <button class="boton-accion" type="button">GUARDAR PRODUCTO</button>
+                <a href="#" class="boton-accion">SALIR</a>
+            </form>
+        </section>
+    </section>
+    <section id="modal-informesmaestros" class="fondo-modal">
+        <section class="contenido-modal">
+            <section class="encabezado-modal">
+                <h2>INFORMES DE CONTROL</h2>
+            </section>
+            <form class="formulario-modal" action="#" method="POST">
+                <label class="etiqueta" for="tipoinforme">TIPO DE INFORME</label>
+                <select id="tipoinforme" name="tipoinforme">
+                    <option value="">Seleccione un tipo de informe</option>
+                    <option value="1">Informe de clientes</option>
+                    <option value="2">Informe de proveedores</option>
+                    <option value="3">Informe de productos</option>
+                </select>
+                <button class="boton-accion" type="button">GENERAR INFORME</button>
+                <a href="#" class="boton-accion">SALIR</a>
+            </form>
+        </section>
+    </section>
 </body>
 
 </html>
