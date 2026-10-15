@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-    background-image:url(/PROYECTOVENTASCOMPRASCESDE/IMAGENES/inicio2.png)
+    background-image:url(/IMAGENES/inicio2.png);
     
 }
 * {
@@ -25,7 +25,7 @@ body {
     max-width: 380px;
     margin: 16px;
     padding: 32px 28px;
-    background: white(164, 238, 164);
+    background-color: rgb(233, 240, 233);
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
