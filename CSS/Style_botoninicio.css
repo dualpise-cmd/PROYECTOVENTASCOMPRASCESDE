@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-    background-image:url(/IMAGENES/inicio2.png);
+  background-image:url(../IMAGENES/inicio2.png);
     
 }
 * {
@@ -83,7 +83,32 @@ input:focus {
     background: #1d4ed8;
 }
 
-.enlace-recuperar {
+.btn-ingresar:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+.error {
+    margin: 0 0 12px;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    color: #b91c1c;
+    background: #fee2e2;
+    border-radius: 8px;
+}
+
+.exito {
+    margin: 0 0 12px;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    color: #166534;
+    background: #dcfce7;
+    border-radius: 8px;
+}
+
+.enlace-registrar {
     display: block;
     margin-top: 18px;
     text-align: center;
@@ -92,7 +117,7 @@ input:focus {
     text-decoration: none;
 }
 
-.enlace-recuperar:hover {
+.enlace-registrar:hover {
     text-decoration: underline;
 }
 
