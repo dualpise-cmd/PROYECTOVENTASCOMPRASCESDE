@@ -1,0 +1,30 @@
+<!doctype html> <!-- Indica que este documento usa HTML5. -->
+<html lang="es"> <!-- Declara que el idioma de la página es español. -->
+<head> <!-- Inicia la configuración del documento. -->
+    <meta charset="utf-8"> <!-- Permite mostrar tildes y caracteres especiales. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Adapta el formulario a celulares y tabletas. -->
+    <title>Recuperar clave | Gestión de venta y compra</title> <!-- Define el título de la pestaña. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- Carga los estilos responsivos de Bootstrap. -->
+    <link rel="stylesheet" href="../CSS/Style_botoninicio.css"> <!-- Reutiliza el ancho de tarjeta de la pantalla de login. -->
+</head> <!-- Termina la configuración del documento. -->
+<body class="bg-light"> <!-- Inicia el contenido con un fondo claro. -->
+    <main class="container min-vh-100 d-flex align-items-center justify-content-center py-4"> <!-- Centra el formulario en la pantalla. -->
+        <section class="card login-caja border-0 shadow-sm w-100"> <!-- Presenta la recuperación dentro de una tarjeta adaptable. -->
+            <div class="card-body p-4 p-md-5"> <!-- Agrega espacio interior a la tarjeta. -->
+                <h1 class="h3 text-center mb-2">Recuperar clave</h1> <!-- Muestra el título que solicitó el usuario. -->
+                <p class="text-secondary text-center mb-4">Escribe tu nombre de usuario</p> <!-- Explica qué dato se debe ingresar. -->
+                <div class="alert alert-info small" role="note">Esta opción es solo de presentación. No envía ni cambia claves en esta entrega.</div> <!-- Informa que todavía no hay recuperación real conectada. -->
+                <form> <!-- Agrupa el campo de usuario. -->
+                    <div class="mb-3"> <!-- Agrupa la etiqueta y la entrada de usuario. -->
+                        <label class="form-label" for="usuarioRecuperacion">Usuario</label> <!-- Identifica el campo para el nombre de usuario. -->
+                        <input class="form-control" type="text" id="usuarioRecuperacion" placeholder="Escribe tu usuario" autocomplete="username" required> <!-- Permite escribir el usuario y valida que no quede vacío. -->
+                    </div> <!-- Termina el grupo del campo. -->
+                    <button class="btn btn-success w-100" type="button" disabled>Recuperar clave</button> <!-- Muestra la acción sin activarla porque no existe un servicio de recuperación. -->
+                </form> <!-- Termina el formulario de muestra. -->
+                <a class="d-block text-center mt-3" href="Botoninicio.html">Volver al login</a> <!-- Regresa a la pantalla de ingreso. -->
+                <a class="d-block text-center mt-2 text-secondary" href="../index.html">Volver a la portada</a> <!-- Regresa al index.html ubicado en la raíz. -->
+            </div> <!-- Termina el contenido de la tarjeta. -->
+        </section> <!-- Termina la tarjeta de recuperación. -->
+    </main> <!-- Termina el contenido principal. -->
+</body> <!-- Termina el contenido visible de la página. -->
+</html> <!-- Termina el documento HTML. -->
