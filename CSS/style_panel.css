@@ -1,0 +1,138 @@
+body { /* Base de la página: fondo claro, altura mínima y sin márgenes. */
+    background-color: #f1f5f9;
+    box-sizing: border-box;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.encabezado-panel { /* Da color a la barra superior de la página de trabajo. */
+    background-color: #03376b;
+}
+
+.logo-panel { /* Ajusta el logo dentro del encabezado. */
+    width: 190px;
+    max-height: 75px;
+    padding: 1px;
+    background-color: #ffffff;
+}
+
+.menu-lateral { /* Prepara el menú lateral azul. */
+    --bs-offcanvas-width: 280px;
+    width: 280px;
+    flex-shrink: 0;
+    color: #e2e8f0;
+    background: linear-gradient(180deg, #172b3d, #07549a);
+}
+
+.menu-titulo { /* Resalta el encabezado del menú. */
+    color: #ffffff;
+    font-weight: 600;
+    background-color: rgba(58, 122, 182, 0.55);
+}
+
+.menu-grupo { /* Mantiene transparentes los grupos del acordeón. */
+    color: #e2e8f0;
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.menu-categoria { /* Da estilo a los botones que expanden cada categoría. */
+    color: #ffffff;
+    background-color: rgba(7, 24, 40, 0.55);
+}
+
+.menu-categoria:not(.collapsed) { /* Mantiene el mismo contraste en una categoría abierta. */
+    color: #ffffff;
+    background-color: rgba(7, 24, 40, 0.75);
+}
+
+.menu-opcion { /* Da estilo a cada opción secundaria del menú. */
+    padding-left: 2.5rem;
+    color: #e2e8f0;
+    background-color: rgba(10, 28, 44, 0.2);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-opcion:hover { /* Resalta una opción al pasar el cursor. */
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+.menu-acceso { /* Da estilo a las categorías sin submenú. */
+    width: 100%;
+    padding: 0.9rem 1.25rem;
+    color: #ffffff;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0;
+}
+
+.menu-acceso:hover { /* Resalta los accesos directos al pasar el cursor. */
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+.fondo-panel { /* Usa la imagen de productos como fondo del área de trabajo. */
+    min-height: calc(100vh - 62px);
+    background-image: linear-gradient(rgba(8, 24, 43, 0.48), rgba(8, 24, 43, 0.48)), url("../IMAGENES/Inicio.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 991.98px) { /* Ajusta el menú al diseño de celular y tableta. */
+    .menu-lateral { /* Permite que el menú se desplace si tiene muchas opciones. */
+        min-height: 100vh;
+    }
+}
+
+/* ---- Modales (ventanas emergentes del panel) ---- */
+
+.modal-content { /* Redondea la ventana y recorta el encabezado azul para que no sobresalga. */
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.modal-header { /* Pinta la franja del título con el azul del panel. */
+    background-color: #03376b;
+    border-bottom: none;
+}
+
+.modal-title { /* Deja el título en blanco sobre el azul. */
+    color: #ffffff;
+}
+
+.modal-header .btn-close { /* Convierte la "X" a blanca para que se vea sobre el azul. */
+    filter: brightness(0) invert(1);
+}
+
+.modal-body { /* Da al cuerpo el tono claro del tema. */
+    background-color: white;
+    color: #0f172a;
+}
+.modal-footer { /* Mantiene el mismo tono claro en el pie de la ventana. */
+    background-color: white;
+    border-top: none;
+}
+
+/* ---- Botones de las modales ---- */
+
+.modal-footer .btn-cerrar { /* Botón "Cerrar": fondo blanco con borde y texto azul. */
+    color: #03376b;
+    background-color: #ffffff;
+    border: 1px solid #03376b;
+}
+
+.modal-footer .btn-cerrar:hover { /* Se invierte a azul sólido al pasar el cursor. */
+    color: #ffffff;
+    background-color: #03376b;
+}
+
+.modal-footer .btn-guardar { /* Botón "Guardar/Generar": azul sólido del panel. */
+    color: #ffffff;
+    background-color: #03376b;
+    border: 1px solid #03376b;
+}
+

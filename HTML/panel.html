@@ -1,219 +1,234 @@
-<!doctype html> <!-- Indica que el documento usa HTML5. -->
-<html lang="es"> <!-- Declara que el contenido de la página está en español. -->
-<head> <!-- Inicia la configuración del documento. -->
-    <meta charset="utf-8"> <!-- Permite mostrar tildes y caracteres especiales. -->
-    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Hace que la página se adapte a celulares y tabletas. -->
-    <title>Panel | Gestión de venta y compra</title> <!-- Define el nombre que aparece en la pestaña. -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- Carga el diseño y los componentes de Bootstrap. -->
-    <link rel="stylesheet" href="../CSS/style.css"> <!-- Carga los pocos estilos propios del proyecto. -->
-</head> <!-- Termina la configuración del documento. -->
-<body class="bg-light"> <!-- Inicia la página de trabajo. -->
-    <header> <!-- Contiene el logo y los controles principales. -->
-        <nav class="navbar navbar-dark encabezado-panel"> <!-- Crea una barra superior oscura. -->
-            <div class="container-fluid"> <!-- Distribuye el logo y los botones a lo ancho. -->
-                <a class="navbar-brand d-flex align-items-center" href="../index.html"> <!-- Permite volver a la portada principal. -->
-                    <img class="logo-panel" src="../IMAGENES/Captura de pantalla 2026-09-28 111203.png" alt="Logo Controz"> <!-- Muestra el logo del proyecto en el encabezado. -->
-                    <span class="ms-2 text-white d-block d-md-d-none">Gestión de venta y compra</span> <!-- Identifica el nombre del sistema en pantallas medianas o grandes. -->
-                </a> <!-- Termina el enlace del logo. -->
-                <div class="d-flex align-items-center ms-auto"> <!-- Agrupa los controles del lado derecho. -->
-                    <a class="btn btn-outline-light btn-sm" href="../index.html">Cerrar Sesión</a> <!-- Regresa a la portada sin simular una sesión real. -->
-                    <button class="navbar-toggler ms-2 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" aria-controls="menuLateral" aria-label="Abrir menú"> <!-- Abre el menú lateral en pantallas pequeñas. -->
-                        <span class="navbar-toggler-icon"></span> <!-- Muestra el icono de menú de Bootstrap. -->
-                    </button> <!-- Termina el botón para abrir el menú. -->
-                </div> <!-- Termina el grupo de controles. -->
-            </div> <!-- Termina el contenido de la barra. -->
-        </nav> <!-- Termina la barra superior. -->
-    </header> <!-- Termina el encabezado. -->
+        <!doctype html>
+        <html lang="es">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Panel | Gestión de venta y compra</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="../CSS/style_panel.css">
+        </head>
+        <body class="bg-light">
+            <header> <!-- Contiene el logo y los controles principales. -->
+                <nav class="navbar encabezado-panel" data-bs-theme="dark">
+                    <section class="container-fluid">
+                            <img class="logo-panel" src="../IMAGENES/Captura de pantalla 2026-09-28 111203.png" alt="Logo ControlZ">
+                        <section class="d-flex align-items-center ms-auto">
+                            <a class="btn btn-light btn-md rounded-pill" href="../index.html">Cerrar Sesión</a>
+                            <button class="navbar-toggler ms-5 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" aria-controls="menuLateral" aria-label="Abrir menú">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </section>
+                    </section>
+                </nav>
+            </header>
 
-    <div class="d-flex flex-column flex-lg-row min-vh-100"> <!-- Coloca el menú junto al área principal en pantallas grandes. -->
-        <nav class="offcanvas-lg offcanvas-start menu-lateral" tabindex="-1" id="menuLateral" aria-label="Menú del sistema"> <!-- Crea un menú lateral que se vuelve desplegable en pantallas pequeñas. -->
-            <div class="offcanvas-header d-lg-none"> <!-- Muestra el encabezado del menú solo en pantallas pequeñas. -->
-                <h2 class="offcanvas-title fs-5">Menú del sistema</h2> <!-- Nombra el menú desplegable. -->
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar menú"></button> <!-- Cierra el menú desplegable. -->
-            </div> <!-- Termina el encabezado móvil. -->
-            <div class="offcanvas-body d-flex flex-column p-0"> <!-- Contiene las categorías y permite desplazarse por ellas. -->
-                <p class="menu-titulo px-3 py-3 mb-0">Menú principal</p> <!-- Presenta el listado de opciones del sistema. -->
-                <div class="accordion accordion-flush" id="acordeonMenu"> <!-- Agrupa categorías que se pueden expandir. -->
-                    <section class="accordion-item menu-grupo"> <!-- Inicia la categoría de datos maestros. -->
-                        <h2 class="accordion-header"> <!-- Contiene el botón que despliega las opciones. -->
-                            <button class="accordion-button menu-categoria" type="button" data-bs-toggle="collapse" data-bs-target="#submenuMaestros" aria-expanded="true" aria-controls="submenuMaestros">Datos Maestros</button> <!-- Abre o cierra las opciones de datos maestros. -->
-                        </h2> <!-- Termina el encabezado de datos maestros. -->
-                        <div id="submenuMaestros" class="accordion-collapse collapse show" data-bs-parent="#acordeonMenu"> <!-- Muestra inicialmente el listado de datos maestros. -->
-                            <div class="list-group list-group-flush"> <!-- Presenta los submenús como una lista. -->
-                                <button class="list-group-item list-group-item-action menu-opcion" type="button" data-bs-toggle="modal" data-bs-target="#modal-pendiente">Tarifas de impuesto</button> <!-- Abre una nota porque aún no hay formulario de tarifas. -->
-                                <button class="list-group-item list-group-item-action menu-opcion" type="button" data-bs-toggle="modal" data-bs-target="#modal-tercero">Terceros</button> <!-- Abre el formulario para registrar clientes o proveedores como terceros. -->
-                                <button class="list-group-item list-group-item-action menu-opcion" type="button" data-bs-toggle="modal" data-bs-target="#modal-producto">Productos</button> <!-- Abre el formulario visual de productos. -->
-                            </div> <!-- Termina la lista de datos maestros. -->
-                        </div> <!-- Termina el contenido desplegable. -->
-                    </section> <!-- Termina la categoría de datos maestros. -->
-                    <section class="accordion-item menu-grupo"> <!-- Inicia la categoría de movimientos. -->
-                        <h2 class="accordion-header"> <!-- Contiene el botón que despliega las opciones. -->
-                            <button class="accordion-button collapsed menu-categoria" type="button" data-bs-toggle="collapse" data-bs-target="#submenuMovimientos" aria-expanded="false" aria-controls="submenuMovimientos">Movimientos</button> <!-- Abre o cierra las opciones de movimientos. -->
-                        </h2> <!-- Termina el encabezado de movimientos. -->
-                        <div id="submenuMovimientos" class="accordion-collapse collapse" data-bs-parent="#acordeonMenu"> <!-- Mantiene ocultas las opciones hasta que se seleccionen. -->
-                            <div class="list-group list-group-flush"> <!-- Presenta los movimientos como una lista. -->
-                                <button class="list-group-item list-group-item-action menu-opcion" type="button" data-bs-toggle="modal" data-bs-target="#modal-pendiente">Registrar compra</button> <!-- Abre una nota porque la compra aún no tiene formulario. -->
-                                <button class="list-group-item list-group-item-action menu-opcion" type="button" data-bs-toggle="modal" data-bs-target="#modal-pendiente">Registrar venta</button> <!-- Abre una nota porque la venta aún no tiene formulario. -->
-                            </div> <!-- Termina la lista de movimientos. -->
-                        </div> <!-- Termina el contenido desplegable. -->
-                    </section> <!-- Termina la categoría de movimientos. -->
-                    <section class="accordion-item menu-grupo"> <!-- Inicia la categoría de informes. -->
-                        <h2 class="accordion-header"> <!-- Contiene el botón que despliega las opciones. -->
-                            <button class="accordion-button collapsed menu-categoria" type="button" data-bs-toggle="collapse" data-bs-target="#submenuInformes" aria-expanded="false" aria-controls="submenuInformes">Informes</button> <!-- Abre o cierra las opciones de informes. -->
-                        </h2> <!-- Termina el encabezado de informes. -->
-                        <div id="submenuInformes" class="accordion-collapse collapse" data-bs-parent="#acordeonMenu"> <!-- Mantiene ocultas las opciones hasta que se seleccionen. -->
-                            <div class="list-group list-group-flush"> <!-- Presenta los informes como una lista. -->
-                                <button class="list-group-item list-group-item-action menu-opcion" type="button" data-bs-toggle="modal" data-bs-target="#modal-informesmaestros">Informes de datos maestros</button> <!-- Abre el selector de informes existente. -->
-                                <button class="list-group-item list-group-item-action menu-opcion" type="button" data-bs-toggle="modal" data-bs-target="#modal-pendiente">Informes de compras y ventas</button> <!-- Abre una nota porque aún no hay informes de movimientos. -->
-                            </div> <!-- Termina la lista de informes. -->
-                        </div> <!-- Termina el contenido desplegable. -->
-                    </section> <!-- Termina la categoría de informes. -->   
-                    <button class="btn menu-acceso" type="button" data-bs-toggle="modal" data-bs-target="#modal-pendiente">Configuración</button> <!-- Abre una nota de muestra para esta categoría. -->
-                    <button class="btn menu-acceso" type="button" data-bs-toggle="modal" data-bs-target="#modal-pendiente">Soporte</button> <!-- Abre una nota de muestra para esta categoría. -->
-                </div> <!-- Termina el acordeón de categorías. -->
-            </div> <!-- Termina el cuerpo del menú lateral. -->
-        </nav> <!-- Termina el menú lateral. -->
+            <section class="d-flex flex-column flex-lg-row">
+                <nav class="offcanvas-lg offcanvas-start menu-lateral" tabindex="-1" id="menuLateral" aria-label="Menú del sistema"> <!-- Crea un menú lateral que se vuelve desplegable en pantallas pequeñas. -->
+                    <section class="offcanvas-header d-lg-none">
+                        <h2 class="offcanvas-title fs-5">Menú del sistema</h2>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar menú"></button>
+                    </section>
+                    <section class="offcanvas-body d-flex flex-column p-0">
+                        <p class="menu-titulo px-3 py-3 mb-0">Menú principal</p>
+                        <section class="accordion accordion-flush" id="acordeonMenu">
+                            <section class="accordion-item menu-grupo"> <!-- Categoría de datos maestros. -->
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button menu-categoria" type="button" data-bs-toggle="collapse" data-bs-target="#submenuMaestros" aria-expanded="true" aria-controls="submenuMaestros">Datos Maestros</button>
+                                </h2>
+                                <section id="submenuMaestros" class="accordion-collapse collapse show" data-bs-parent="#acordeonMenu">
+                                    <section class="list-group list-group-flush">
+                                        <button class="list-group-item list-group-item-action menu-opcion" type="button" data-bs-toggle="modal" data-bs-target="#modal-tarifas">Tarifas de impuesto</button>
+                                        <button class="list-group-item list-group-item-action menu-opcion" type="button" data-bs-toggle="modal" data-bs-target="#modal-tercero">Terceros</button>
+                                        <button class="list-group-item list-group-item-action menu-opcion" type="button" data-bs-toggle="modal" data-bs-target="#modal-producto">Productos</button>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="accordion-item menu-grupo"> <!-- Categoría de movimientos. -->
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed menu-categoria" type="button" data-bs-toggle="collapse" data-bs-target="#submenuMovimientos" aria-expanded="false" aria-controls="submenuMovimientos">Movimientos</button>
+                                </h2>
+                                <section id="submenuMovimientos" class="accordion-collapse collapse" data-bs-parent="#acordeonMenu">
+                                    <section class="list-group list-group-flush">
+                                        <button class="list-group-item list-group-item-action menu-opcion" type="button" data-bs-toggle="modal" data-bs-target="#modal-pendiente">Registrar compra</button>
+                                        <button class="list-group-item list-group-item-action menu-opcion" type="button" data-bs-toggle="modal" data-bs-target="#modal-pendiente">Registrar venta</button>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="accordion-item menu-grupo"> <!-- Categoría de informes. -->
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed menu-categoria" type="button" data-bs-toggle="collapse" data-bs-target="#submenuInformes" aria-expanded="false" aria-controls="submenuInformes">Informes</button>
+                                </h2>
+                                <section id="submenuInformes" class="accordion-collapse collapse" data-bs-parent="#acordeonMenu">
+                                    <section class="list-group list-group-flush">
+                                        <button class="list-group-item list-group-item-action menu-opcion" type="button" data-bs-toggle="modal" data-bs-target="#modal-informesmaestros">Informes de datos maestros</button>
+                                        <button class="list-group-item list-group-item-action menu-opcion" type="button" data-bs-toggle="modal" data-bs-target="#modal-pendiente">Informes de compras y ventas</button>
+                                    </section>
+                                </section>
+                            </section>
+                            <button class="btn menu-acceso" type="button" data-bs-toggle="modal" data-bs-target="#modal-pendiente">Configuración</button>
+                            <button class="btn menu-acceso" type="button" data-bs-toggle="modal" data-bs-target="#modal-pendiente">Soporte</button>
+                        </section>
+                    </section>
+                </nav>
 
         <main class="fondo-panel flex-grow-1" aria-label="Área principal de trabajo"> <!-- Deja visible el fondo hasta que se seleccione una opción del menú. -->
-        </main> <!-- Termina el área principal de trabajo. -->
-    </div> <!-- Termina el diseño con menú lateral y fondo principal. -->
+            <section class="modal fade" id="modal-tarifas" tabindex="-1" aria-labelledby="tituloModalTarifas" aria-hidden="true"> <!-- Ventana con el formulario de tarifas. -->
+                <section class="modal-dialog modal-dialog-scrollable">
+                    <section class="modal-content"> 
+                        <section class="modal-header">
+                            <h2 class="modal-title fs-5" id="tituloModalTarifas">Tarifas de impuesto</h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                        </section>
+                        <section class="modal-body">
+                            <form>
+                                <section class="mb-3">
+                                    <label class="form-label" for="descripcionTarifa">Descripcion</label>
+                                    <input class="form-control" type="text" id="Descripcion" required>
+                                </section>
+                                <section class="mb-3">
+                                    <label class="form-label" for="porcentaje">Porcentaje de impuesto</label>
+                                    <select class="form-select" id="Porcentaje" required type="number">
+                                        <option value="">Seleccionar porcentaje del impuesto</option>
+                                        <option value="1">0%</option>
+                                        <option value="2">5%</option>
+                                        <option value="3">19%</option>
+                                    </select>
+                                </section>
+                            </form>
+                        </section>
+                        <section class="modal-footer">
+                            <button type="button" class="btn btn-cerrar" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-guardar">Guardar tarifa de impuesto</button>
+                        </section>
+                    </section>
+                </section>
+            </section>
 
-    <div class="modal fade" id="modal-tercero" tabindex="-1" aria-labelledby="tituloModalTercero" aria-hidden="true"> <!-- Define la ventana Bootstrap para el formulario de tercero. -->
-        <div class="modal-dialog modal-dialog-scrollable"> <!-- Permite desplazar el contenido si la pantalla es baja. -->
-            <div class="modal-content"> <!-- Agrupa el encabezado, cuerpo y botones de la ventana. -->
-                <div class="modal-header"> <!-- Muestra el título y el botón de cierre. -->
-                    <h2 class="modal-title fs-5" id="tituloModalTercero">Crear tercero</h2> <!-- Nombra el formulario de cliente o proveedor. -->
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button> <!-- Cierra la ventana modal. -->
-                </div> <!-- Termina el encabezado de la modal. -->
-                <div class="modal-body"> <!-- Contiene los campos de ejemplo. -->
-                    <p class="small text-secondary">Formulario visual de muestra; los datos no se guardan.</p> <!-- Aclara que no hay almacenamiento conectado. -->
-                    <form> <!-- Agrupa los campos de la modal. -->
-                        <div class="mb-3"> <!-- Agrupa el campo de documento. -->
-                            <label class="form-label" for="cedula">Cédula</label> <!-- Identifica el campo de documento. -->
-                            <input class="form-control" type="number" id="cedula" required> <!-- Muestra un campo numérico de documento. -->
-                        </div> <!-- Termina el grupo de documento. -->
-                        <div class="mb-3"> <!-- Agrupa el campo de nombre. -->
-                            <label class="form-label" for="nombreTercero">Nombre</label> <!-- Identifica el campo de nombre. -->
-                            <input class="form-control" type="text" id="nombreTercero" required> <!-- Muestra un campo de texto para el nombre. -->
-                        </div> <!-- Termina el grupo de nombre. -->
-                        <div class="mb-3"> <!-- Agrupa el campo de apellido. -->
-                            <label class="form-label" for="apellido">Apellido</label> <!-- Identifica el campo de apellido. -->
-                            <input class="form-control" type="text" id="apellido" required> <!-- Muestra un campo de texto para el apellido. -->
-                        </div> <!-- Termina el grupo de apellido. -->
-                        <div class="mb-3"> <!-- Agrupa el campo de correo electrónico. -->
-                            <label class="form-label" for="correo">Correo</label> <!-- Identifica el campo de correo. -->
-                            <input class="form-control" type="email" id="correo"> <!-- Muestra un campo que reconoce el formato de correo. -->
-                        </div> <!-- Termina el grupo de correo. -->
-                        <div class="mb-3"> <!-- Agrupa el campo de teléfono. -->
-                            <label class="form-label" for="telefono">Teléfono</label> <!-- Identifica el campo de teléfono. -->
-                            <input class="form-control" type="tel" id="telefono"> <!-- Muestra un campo de teléfono. -->
-                        </div> <!-- Termina el grupo de teléfono. -->
-                        <div class="mb-3"> <!-- Agrupa el campo de dirección. -->
-                            <label class="form-label" for="direccion">Dirección</label> <!-- Identifica el campo de dirección. -->
-                            <input class="form-control" type="text" id="direccion"> <!-- Muestra un campo de texto para la dirección. -->
-                        </div> <!-- Termina el grupo de dirección. -->
-                        <fieldset> <!-- Agrupa las opciones de tipo de tercero. -->
-                            <legend class="form-label">Tipo</legend> <!-- Indica que se debe seleccionar cliente o proveedor. -->
-                            <div class="form-check"> <!-- Presenta la casilla de cliente con estilo Bootstrap. -->
-                                <input class="form-check-input" type="checkbox" id="tipoCliente"> <!-- Permite marcar el tipo cliente. -->
-                                <label class="form-check-label" for="tipoCliente">Cliente</label> <!-- Describe la casilla de cliente. -->
-                            </div> <!-- Termina la casilla de cliente. -->
-                            <div class="form-check"> <!-- Presenta la casilla de proveedor con estilo Bootstrap. -->
-                                <input class="form-check-input" type="checkbox" id="tipoProveedor"> <!-- Permite marcar el tipo proveedor. -->
-                                <label class="form-check-label" for="tipoProveedor">Proveedor</label> <!-- Describe la casilla de proveedor. -->
-                            </div> <!-- Termina la casilla de proveedor. -->
-                        </fieldset> <!-- Termina las opciones de tipo de tercero. -->
-                    </form> <!-- Termina los campos de tercero. -->
-                </div> <!-- Termina el cuerpo de la modal. -->
-                <div class="modal-footer"> <!-- Contiene los botones de la ventana. -->
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> <!-- Cierra la ventana sin guardar. -->
-                    <button type="button" class="btn btn-success" disabled>Guardar tercero</button> <!-- Muestra el botón visual sin realizar un guardado. -->
-                </div> <!-- Termina los botones de la modal. -->
-            </div> <!-- Termina el contenido de la ventana. -->
-        </div> <!-- Termina el cuadro de la ventana. -->
-    </div> <!-- Termina la modal de tercero. -->
+            <section class="modal fade" id="modal-tercero" tabindex="-1" aria-labelledby="tituloModalTercero" aria-hidden="true"> <!-- Ventana con el formulario de tercero. -->
+                <section class="modal-dialog modal-dialog-scrollable">
+                    <section class="modal-content"> 
+                        <section class="modal-header">
+                            <h2 class="modal-title fs-5" id="tituloModalTercero">Crear tercero</h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                        </section>
+                        <section class="modal-body">
+                            <form>
+                                 <section class="mb-3">
+                                    <label class="form-label" for="tipoDocumento">Tipo de documento</label>
+                                    <select class="form-select" id="TipoDocumento" required>
+                                     <option value="">Seleccionar tipo de documento</option>
+                                     <option value="CC">Cédula de ciudadania</option>
+                                     <option value="NIT">NIT de empresa</option>
+                                     <option value="OTRO">Otro</option>
+                                    </select>
+                                </section>
+                                <section class="mb-3">
+                                    <label class="form-label" for="documento">Número de documento</label>
+                                    <input class="form-control" type="number" id="Documento" required>
+                                </section>
+                                <section class="mb-3">
+                                    <label class="form-label" for="razSocial">Razón social</label>
+                                    <input class="form-control" type="text" id="RazonSocial">
+                                </section>
+                                <section class="mb-3">
+                                    <label class="form-label" for="nombres">Nombres</label>
+                                    <input class="form-control" type="text" id="Nombres">
+                                </section>
+                                <section class="mb-3">
+                                    <label class="form-label" for="apellidos">Apellidos</label>
+                                    <input class="form-control" type="text" id="Apellidos">
+                                </section>
+                                <section class="mb-3">
+                                    <label class="form-label" for="telefono">Teléfono</label>
+                                    <input class="form-control" type="number" id="telefono">
+                                </section>
+                                <fieldset class=" border rounded p-3 mt-3">
+                                    <legend class="w-auto px-2 fs-6 fw-semibold mb-2">Tipo de tercero</legend>
+                                    <section class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="EsCliente">
+                                        <label class="form-check-label" for="EsCliente">Cliente</label>
+                                    </section>
+                                    <section class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="EsProveedor">
+                                        <label class="form-check-label" for="EsProveedor">Proveedor</label>
+                                    </section>
+                                </fieldset>
+                            </form>
+                        </section>
+                        <section class="modal-footer">
+                            <button type="button" class="btn btn-cerrar" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-guardar">Guardar tercero</button>
+                        </section>
+                    </section>
+                </section>
+            </section>
 
-    <div class="modal fade" id="modal-producto" tabindex="-1" aria-labelledby="tituloModalProducto" aria-hidden="true"> <!-- Define la ventana para el formulario de producto. -->
-        <div class="modal-dialog"> <!-- Centra el cuadro de la ventana. -->
-            <div class="modal-content"> <!-- Agrupa las partes de la ventana. -->
-                <div class="modal-header"> <!-- Muestra el título y el botón de cierre. -->
-                    <h2 class="modal-title fs-5" id="tituloModalProducto">Crear producto</h2> <!-- Nombra el formulario de producto. -->
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button> <!-- Cierra la ventana modal. -->
-                </div> <!-- Termina el encabezado de la modal. -->
-                <div class="modal-body"> <!-- Contiene los campos de ejemplo del producto. -->
-                    <p class="small text-secondary">Formulario visual de muestra; los datos no se guardan.</p> <!-- Aclara que no hay almacenamiento conectado. -->
-                    <form> <!-- Agrupa los campos de producto. -->
-                        <div class="mb-3"> <!-- Agrupa el campo de código. -->
-                            <label class="form-label" for="codigo">Código</label> <!-- Identifica el campo de código. -->
-                            <input class="form-control" type="text" id="codigo" required> <!-- Muestra el campo para el código del producto. -->
-                        </div> <!-- Termina el grupo de código. -->
-                        <div class="mb-3"> <!-- Agrupa el campo de nombre del producto. -->
-                            <label class="form-label" for="nombreProducto">Nombre del producto</label> <!-- Identifica el campo de nombre. -->
-                            <input class="form-control" type="text" id="nombreProducto" required> <!-- Muestra el campo para el nombre del producto. -->
-                        </div> <!-- Termina el grupo de nombre del producto. -->
-                        <div class="mb-3"> <!-- Agrupa el campo de precio. -->
-                            <label class="form-label" for="precio">Precio de venta</label> <!-- Identifica el campo de precio de venta. -->
-                            <input class="form-control" type="number" id="precio" min="0" required> <!-- Muestra un campo numérico para el precio. -->
-                        </div> <!-- Termina el grupo de precio. -->
-                        <div class="mb-3"> <!-- Agrupa la lista de tarifa IVA. -->
-                            <label class="form-label" for="iva">IVA</label> <!-- Identifica la lista de tarifas. -->
-                            <select class="form-select" id="iva"> <!-- Muestra una lista de tarifas con estilo Bootstrap. -->
-                                <option value="">Seleccione una tarifa de IVA</option> <!-- Invita a elegir una opción. -->
-                                <option value="0">0%</option> <!-- Opción de IVA del cero por ciento. -->
-                                <option value="5">5%</option> <!-- Opción de IVA del cinco por ciento. -->
-                                <option value="19">19%</option> <!-- Opción de IVA del diecinueve por ciento. -->
-                            </select> <!-- Termina la lista de tarifas. -->
-                        </div> <!-- Termina el grupo de IVA. -->
-                    </form> <!-- Termina los campos de producto. -->
-                </div> <!-- Termina el cuerpo de la modal. -->
-                <div class="modal-footer"> <!-- Contiene los botones de la ventana. -->
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> <!-- Cierra la ventana sin guardar. -->
-                    <button type="button" class="btn btn-success" disabled>Guardar producto</button> <!-- Muestra el botón visual sin realizar un guardado. -->
-                </div> <!-- Termina los botones de la modal. -->
-            </div> <!-- Termina el contenido de la ventana. -->
-        </div> <!-- Termina el cuadro de la ventana. -->
-    </div> <!-- Termina la modal de producto. -->
+            <section class="modal fade" id="modal-producto" tabindex="-1" aria-labelledby="tituloModalProducto" aria-hidden="true"> <!-- Ventana con el formulario de producto. -->
+                <section class="modal-dialog">
+                    <section class="modal-content">
+                        <section class="modal-header">
+                            <h2 class="modal-title fs-5" id="tituloModalProducto">Crear producto</h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                        </section>
+                        <section class="modal-body">
+                            <form>
+                                <section class="mb-3">
+                                    <label class="form-label" for="codigo">Código</label>
+                                    <input class="form-control" type="text" id="codigo" required>
+                                </section>
+                                <section class="mb-3">
+                                    <label class="form-label" for="nombreProducto">Nombre del producto</label>
+                                    <input class="form-control" type="text" id="nombreProducto" required>
+                                </section>
+                                <section class="mb-3">
+                                    <label class="form-label" for="precio">Precio de venta</label>
+                                    <input class="form-control" type="number" id="precio" min="0" required>
+                                </section>
+                                <section class="mb-3">
+                                    <label class="form-label" for="iva">IVA</label>
+                                    <select class="form-select" id="iva">
+                                        <option value="">Seleccione una tarifa de IVA</option>
+                                        <option value="0">0%</option>
+                                        <option value="5">5%</option>
+                                        <option value="19">19%</option>
+                                    </select>
+                                </section>
+                            </form>
+                        </section>
+                        <section class="modal-footer">
+                            <button type="button" class="btn btn-cerrar" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-guardar">Guardar producto</button>
+                        </section>  
+                    </section>
+                </section>
+            </section>
 
-    <div class="modal fade" id="modal-informesmaestros" tabindex="-1" aria-labelledby="tituloModalInforme" aria-hidden="true"> <!-- Define la ventana para seleccionar un informe de datos maestros. -->
-        <div class="modal-dialog"> <!-- Centra el cuadro de la ventana. -->
-            <div class="modal-content"> <!-- Agrupa las partes de la ventana. -->
-                <div class="modal-header"> <!-- Muestra el título y el botón de cierre. -->
-                    <h2 class="modal-title fs-5" id="tituloModalInforme">Informes de control</h2> <!-- Nombra la ventana de informes. -->
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button> <!-- Cierra la ventana modal. -->
-                </div> <!-- Termina el encabezado de la modal. -->
-                <div class="modal-body"> <!-- Contiene la lista de informes de ejemplo. -->
-                    <p class="small text-secondary">Selección visual de informe; no se genera un archivo en esta entrega.</p> <!-- Aclara que el informe no está conectado. -->
-                    <label class="form-label" for="tipoInforme">Tipo de informe</label> <!-- Identifica la lista de informes. -->
-                    <select class="form-select" id="tipoInforme"> <!-- Muestra las opciones de informe disponibles visualmente. -->
-                        <option value="">Seleccione un tipo de informe</option> <!-- Invita a elegir una opción. -->
-                        <option value="clientes">Informe de clientes</option> <!-- Opción de informe de clientes. -->
-                        <option value="proveedores">Informe de proveedores</option> <!-- Opción de informe de proveedores. -->
-                        <option value="productos">Informe de productos</option> <!-- Opción de informe de productos. -->
-                    </select> <!-- Termina la lista de informes. -->
-                </div> <!-- Termina el cuerpo de la modal. -->
-                <div class="modal-footer"> <!-- Contiene los botones de la ventana. -->
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> <!-- Cierra la ventana. -->
-                    <button type="button" class="btn btn-success" disabled>Generar informe</button> <!-- Muestra la acción visual sin generar un archivo. -->
-                </div> <!-- Termina los botones de la modal. -->
-            </div> <!-- Termina el contenido de la ventana. -->
-        </div> <!-- Termina el cuadro de la ventana. -->
-    </div> <!-- Termina la modal de informes. -->
-
-    <div class="modal fade" id="modal-pendiente" tabindex="-1" aria-labelledby="tituloModalPendiente" aria-hidden="true"> <!-- Define una nota que se comparte entre las opciones aún no implementadas. -->
-        <div class="modal-dialog"> <!-- Centra el cuadro de la nota. -->
-            <div class="modal-content"> <!-- Agrupa el encabezado y el mensaje. -->
-                <div class="modal-header"> <!-- Muestra el título y el botón de cierre. -->
-                    <h2 class="modal-title fs-5" id="tituloModalPendiente">Opción de muestra</h2> <!-- Indica que se abrió una opción visual. -->
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button> <!-- Cierra la ventana modal. -->
-                </div> <!-- Termina el encabezado de la nota. -->
-                <div class="modal-body">Esta opción sirve para mostrar la navegación del menú. Su formulario y su funcionamiento se definirán en una siguiente etapa.</div> <!-- Explica por qué esta acción aún no tiene campos ni lógica. -->
-                <div class="modal-footer"> <!-- Contiene el botón para cerrar la nota. -->
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Entendido</button> <!-- Cierra la nota y vuelve al panel. -->
-                </div> <!-- Termina el botón de la nota. -->
-            </div> <!-- Termina el contenido de la nota. -->
-        </div> <!-- Termina el cuadro de la nota. -->
-    </div> <!-- Termina la modal de opciones pendientes. -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> <!-- Habilita las modales y el menú de Bootstrap, sin conectar lógica de negocio. -->
-</body> <!-- Termina el contenido visible del panel. -->
-</html> <!-- Termina el documento HTML. -->
+            <section class="modal fade" id="modal-informesmaestros" tabindex="-1" aria-labelledby="tituloModalInforme" aria-hidden="true"> <!-- Ventana para seleccionar un informe de datos maestros. -->
+                <section class="modal-dialog">
+                    <section class="modal-content">
+                        <section class="modal-header">
+                            <h2 class="modal-title fs-5" id="tituloModalInforme">Informes de control</h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                        </section>
+                        <section class="modal-body">
+                            <p class="small text-secondary">Selección visual de informe; no se genera un archivo en esta entrega.</p>
+                            <label class="form-label" for="tipoInforme">Tipo de informe</label>
+                            <select class="form-select" id="tipoInforme">
+                                <option value="">Seleccione un tipo de informe</option>
+                                <option value="clientes">Informe de clientes</option>
+                                <option value="proveedores">Informe de proveedores</option>
+                                <option value="productos">Informe de productos</option>
+                            </select>
+                        </section>
+                        <section class="modal-footer">
+                            <button type="button" class="btn btn-cerrar" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-guardar">Generar informe</button>
+                        </section>  
+                    </section>
+                </section>
+            </section>
+        </main>
+        </section>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>

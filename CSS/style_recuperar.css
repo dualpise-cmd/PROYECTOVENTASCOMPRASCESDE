@@ -1,0 +1,11 @@
+body { /* Base de la página: fondo claro, altura mínima y sin márgenes. */
+    background-color: #f1f5f9;
+    box-sizing: border-box;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.login-caja { /* Ajusta el ancho de la tarjeta de recuperación. */
+    max-width: 460px;
+}
