@@ -3,150 +3,150 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Controlz | Gestión para pequeños negocios</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Controlz | Gestión de venta y compra</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/style_index.css">
 </head>
 <body class="bg-light">
-    <header> <!-- Agrupa la barra superior de navegación. -->
+    <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark barra-portada">
-            <div class="container">
+            <section class="container">
                 <a class="navbar-brand" href="#inicio" aria-label="ControlZ, ir al inicio">
-                    <img class="logo-portada" src="IMAGENES/Captura de pantalla 2026-09-28 111203.png" alt="Controz">
+                    <img class="logo-portada" src="IMAGENES/logo.png" alt="ControlZ">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPortada" aria-controls="menuPortada" aria-expanded="false" aria-label="Mostrar navegación">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="menuPortada">
-                    <div class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                <section class="collapse navbar-collapse" id="menuPortada">
+                    <section class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
                         <a class="nav-link" href="#inicio">Inicio</a>
                         <a class="nav-link" href="#servicios">Servicios</a>
                         <a class="nav-link" href="#productos">Productos</a>
                         <a class="nav-link" href="#contacto">Contacto</a>
                         <a class="btn btn-outline-success ms-lg-2" href="HTML/login.html">Iniciar sesión</a>
-                    </div>
-                </div>
-            </div>
+                    </section>
+                </section>
+            </section>
         </nav>
     </header>
 
     <main> <!-- Agrupa las secciones principales de la portada. -->
-        <section id="inicio" class="hero-inicio"> <!-- Presenta el proyecto sobre la imagen de fondo. -->
-            <div class="container py-5">
-                <div class="row align-items-start min-vh-75">
-                    <div class="col-12 col-lg-8 col-xl-7">
-                        <p class="badge text-bg-success text-uppercase mb-2">Proyecto estudiantil</p>
+        <section id="inicio" class="hero-inicio">
+            <section class="container py-4">
+                <section class="row align-items-start">
+                    <section class="col-12 col-lg-8 col-xl-7">
+                        <p class="badge text-bg-success text-uppercase mb-2">Gestión de venta y compra</p>
                         <h1 class="display-4 fw-bold text-white">Gestión sencilla para tu negocio</h1>
-                        <p class="lead text-white mt-3">Organiza tus ventas, compras y productos desde una propuesta pensada para pequeños negocios.</p>
+                        <p class="lead text-white mt-3">Organiza tus ventas, compras y productos desde una propuesta pensada para tu negocio.</p>
                         <a class="btn btn-success btn-lg mt-3" href="#servicios">Conocer los servicios</a>
-                    </div>
-                </div>
-            </div>
+                    </section>
+                </section>
+            </section>
         </section>
 
-        <section id="servicios" class="container py-5"> <!-- Presenta los dos servicios que se mostrarán en el sitio. -->
-            <div class="text-center mb-4">
+        <section id="servicios" class="container py-5"> <!-- Presenta los dos servicios que se mostrarán en la portada. -->
+            <section class="text-center mb-4">
                 <h2 class="display-6 fw-semibold">Servicios</h2>
                 <p class="text-secondary mb-0">Selecciona una opción para conocer más información.</p>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-12 col-md-6 col-lg-5">
+            </section>
+            <section class="row g-4 justify-content-center">
+                <section class="col-12 col-md-6 col-lg-5">
                     <article class="card tarjeta-servicio h-100 shadow-sm">
-                        <div class="card-body p-4">
-                            <p class="small text-success fw-semibold text-uppercase">Servicio</p>
-                            <h3 class="h4">Facturación y ventas</h3>
-                            <p class="text-secondary">organiza la información de ventas del negocio.</p>
+                        <section class="card-body p-4">
+                            <p class="small text-success align fw-semibold text-uppercase">Servicio</p>
+                            <h3 class="text-center mb-2">Facturación y ventas</h3>
+                            <p class="text-secondary text-center">Organiza la información de ventas del negocio.</p>
                             <button class="btn btn-outline-success" type="button" data-bs-toggle="modal" data-bs-target="#modal-facturacion">Más información</button>
-                        </div>
+                        </section>
                     </article>
-                </div>
-                <div class="col-12 col-md-6 col-lg-5">
+                </section>
+                <section class="col-12 col-md-6 col-lg-5">
                     <article class="card tarjeta-servicio h-100 shadow-sm">
-                        <div class="card-body p-4">
-                            <p class="small text-success fw-semibold text-uppercase">Servicio</p>
-                            <h3 class="h4">Gestión de inventarios</h3>
-                            <p class="text-secondary">organiza tus productos y consultar sus existencias.</p>
+                        <section class="card-body p-4">
+                            <p class="small text-success align fw-semibold text-uppercase">Servicio</p>
+                            <h3 class="text-center mb-2">Gestión de inventarios</h3>
+                            <p class="text-secondary text-center">Organiza tus productos y consulta sus existencias.</p>
                             <button class="btn btn-outline-success" type="button" data-bs-toggle="modal" data-bs-target="#modal-inventario">Más información</button>
-                        </div>
+                        </section>
                     </article>
-                </div>
-            </div>
+                </section>
+            </section>
         </section>
 
         <section id="productos" class="seccion-producto py-5"> <!-- Explica el producto que se está presentando. -->
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-lg-9 text-center">
+            <section class="container">
+                <section class="row justify-content-center">
+                    <section class="col-12 col-lg-9 text-center">
                         <h2 class="display-6 fw-semibold">Nuestro producto</h2>
-                        <p class="lead mb-0">ControlZ es una  aplicación para apoyar tu negocio en la organización de tus productos, compras y ventas.</p>
-                    </div>
-                </div>
-            </div>
+                        <p class="lead mb-0">ControlZ es una aplicación para apoyar tu negocio en la organización de tus productos, compras y ventas.</p>
+                    </section>
+                </section>
+            </section>
         </section>
 
         <section id="contacto" class="container py-5"> <!-- Contiene el formulario para que una persona pueda escribir un mensaje. -->
-            <div class="row justify-content-center">
-                <div class="col-12 col-lg-8">
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body p-4 p-md-5">
-                            <h2 class="h3">Contáctenos</h2>
-                            <p class="text-secondary">Déjanos un mensaje para contactarte.</p>
+            <section class="row justify-content-center">
+                <section class="col-12 col-lg-8">
+                    <article class="card border-0 shadow-sm">
+                        <section class="card-body p-4 p-md-5">
+                            <h2 class="text-center mb-2">Contáctenos</h2>
+                            <p class="text-secondary text-center mb-4">Déjanos un mensaje para contactarte.</p>  
                             <form>
-                                <div class="mb-3">
+                                <section class="mb-3">
                                     <label class="form-label" for="nombreContacto">Nombre</label>
                                     <input class="form-control" type="text" id="nombreContacto" placeholder="Escribe tu nombre" required>
-                                </div>
-                                <div class="mb-3">
+                                </section>
+                                <section class="mb-3">
                                     <label class="form-label" for="correoContacto">Correo electrónico</label>
                                     <input class="form-control" type="email" id="correoContacto" placeholder="nombre@correo.com" required>
-                                </div>
-                                <div class="mb-3">
+                                </section>
+                                <section class="mb-3">
                                     <label class="form-label" for="mensajeContacto">Mensaje</label>
                                     <textarea class="form-control" id="mensajeContacto" rows="4" placeholder="Escribe tu mensaje" required></textarea>
-                                </div>
-                                <button class="btn btn-success" type="button" disabled>Enviar mensaje</button>
+                                </section>
+                                <button class="btn btn-success" type="button">Enviar mensaje</button>
                             </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        </section>
+                    </article>
+                </section>
+            </section>
         </section>
     </main>
 
     <footer class="text-center py-3 footer-portada"> <!-- Muestra el pie de página. -->
-        <div class="container small">@ 2026 ControlZ.</div>
+        <section class="container small">© 2026 ControlZ.</section>
     </footer>
 
-    <div class="modal fade" id="modal-facturacion" tabindex="-1" aria-labelledby="tituloFacturacion" aria-hidden="true"> <!-- Ventana con la descripción ampliada de facturación. -->
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
+    <section class="modal fade" id="modal-facturacion" tabindex="-1" aria-labelledby="tituloFacturacion" aria-hidden="true"> <!-- Ventana con la descripción ampliada de facturación. -->
+        <section class="modal-dialog modal-dialog-centered">
+            <section class="modal-content">
+                <section class="modal-header">
                     <h2 class="modal-title fs-5" id="tituloFacturacion">Facturación y ventas</h2>
                     <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body">organiza la ventas de tu  negocio.</div>
-                <div class="modal-footer">
+                </section>
+                <section class="modal-body">Organiza las ventas de tu negocio.</section>
+                <section class="modal-footer">
                     <button class="btn btn-success" type="button" data-bs-dismiss="modal">Entendido</button>
-                </div>
-            </div>
-        </div>
-    </div>
+                </section>
+            </section>
+        </section>
+    </section>
 
-    <div class="modal fade" id="modal-inventario" tabindex="-1" aria-labelledby="tituloInventario" aria-hidden="true"> <!-- Ventana con la descripción ampliada de inventario. -->
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
+    <section class="modal fade" id="modal-inventario" tabindex="-1" aria-labelledby="tituloInventario" aria-hidden="true"> <!-- Ventana con la descripción ampliada de inventario. -->
+        <section class="modal-dialog modal-dialog-centered">
+            <section class="modal-content">
+                <section class="modal-header">
                     <h2 class="modal-title fs-5" id="tituloInventario">Gestión de inventarios</h2>
                     <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body">organiza tus productos y presentar una consulta de existencias.</div>
-                <div class="modal-footer">
+                </section>
+                <section class="modal-body">Organiza tus productos y consulta sus existencias.</section>
+                <section class="modal-footer">
                     <button class="btn btn-success" type="button" data-bs-dismiss="modal">Entendido</button>
-                </div>
-            </div>
-        </div>
-    </div>
+                </section>
+            </section>
+        </section>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-body { /* Base de la página: fondo claro, altura mínima y sin márgenes. */
+body {
     background-color: #f1f5f9;
     box-sizing: border-box;
     min-height: 100vh;
@@ -6,6 +6,6 @@ body { /* Base de la página: fondo claro, altura mínima y sin márgenes. */
     padding: 0;
 }
 
-.login-caja { /* Ajusta el ancho de la tarjeta del login. */
+.login-caja {
     max-width: 460px;
 }
